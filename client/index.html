@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+	
+	<title>cloak.js</title>
+
+	<link rel="stylesheet" type="text/css" href="stylesheets/styles.css" />
+
+</head>
+<body>
+
+	<div id="wrapper"></div>
+
+	<!-- CommonJS Library -->
+	<script src="build/js/common.js"></script>
+
+	<!-- Load libraries/frameworks -->
+	<script src="build/js/lib.js"></script>
+
+	<!-- Load app files -->
+	<script src="build/js/app.js"></script>
+
+	<!-- Start running... -->
+	<script>
+
+		// Add the /lib directory to the require path
+		require.paths.push('/lib');
+
+		// Load underscore
+		var _ = require('underscore');
+
+		_.extend(require('cloak').config, {
+			// Collections should make dagger style requests
+			collectionRequestStyle: 'dagger',
+			// Tell cloak.js to use socket.io
+			// socket: require('socket.io').connect('http://localhost')
+		});
+
+		// Tell the router to start listening...
+		var MainRouter = require('./routers/main');
+		var router = new MainRouter();
+
+	</script>
+
+</body>
+</html>
