@@ -44,7 +44,7 @@ var Model = module.exports = AppObject.extend({
 	// 
 	initialize: function(data) {
 		if (typeof data === 'object' && data) {
-			_.extend(this.attribute, data);
+			this.unserialize(data);
 		}
 	},
 

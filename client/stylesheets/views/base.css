@@ -1,0 +1,13 @@
+
+body, html {
+	height: 100%;
+	background: #fcfcfc;
+}
+
+	#wrapper {
+		position: relative;
+		min-height: 100%;
+		margin: 0;
+		/* The 100px padding-bottom is for the footer */
+		padding: 0 0 100px;
+	}

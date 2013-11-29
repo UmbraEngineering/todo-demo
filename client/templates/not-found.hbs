@@ -1,0 +1,14 @@
+<div class="panel">
+	<h2>Error 404: Not Found</h2>
+	<p>
+		We couldn't find what you were looking for. Perhaps try one of these:
+	</p>
+	<ul>
+	{{#if isLoggedIn }}
+		<li><a href="/lists" rel="internal">View your lists</a></li>
+	{{else}}
+		<li><a href="/login" rel="internal">Login</a></li>
+		<li><a href="/welcome" rel="internal">Create a new account</a></li>
+	{{/if}}
+	</ul>
+</div>

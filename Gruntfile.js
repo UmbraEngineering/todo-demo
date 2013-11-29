@@ -23,6 +23,7 @@ module.exports = function(grunt) {
 				publicPath + '/javascripts/routers/**/*.js'
 			],
 			options: {
+				sub: true,
 				browser: true,
 				bitwise: false,
 				camelcase: false,
@@ -54,7 +55,8 @@ module.exports = function(grunt) {
 		commonjs: {
 			all: {
 				src: publicPath + '/javascripts',
-				dest: buildPath + '/js'
+				dest: buildPath + '/js',
+				keepFiles: ['templates.js']
 			}
 		},
 		
@@ -75,6 +77,7 @@ module.exports = function(grunt) {
 			css: {
 				src: [
 					publicPath + '/stylesheets/normalize.css',
+					publicPath + '/stylesheets/foundation.css',
 					publicPath + '/stylesheets/views/**/*.css'
 				],
 				dest: buildPath + '/css/styles.css'
@@ -136,7 +139,8 @@ module.exports = function(grunt) {
 		var opts = {
 			output: 2,
 			src: data.src,
-			dest: data.dest
+			dest: data.dest,
+			keepFiles: data.keepFiles
 		};
 		commonjs.build(opts, function() {
 			commonjs.outputClientTo(data.dest + '/common.js', done);
@@ -145,7 +149,7 @@ module.exports = function(grunt) {
 
 // --------------------------------------------------------
 
-	grunt.registerTask('js', ['jshint', 'templates', 'commonjs', 'concat:lib', 'concat:app', 'uglify:lib', 'uglify:app']);
+	grunt.registerTask('js', ['jshint', 'templates', 'commonjs', 'concat:lib', 'concat:app']);//, 'uglify:lib', 'uglify:app']);
 	grunt.registerTask('css', ['concat:css', 'cssmin']);
 	grunt.registerTask('templates', ['handlebars']);
 	grunt.registerTask('default', ['mkdir:build', 'js', 'css']);

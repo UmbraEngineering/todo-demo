@@ -1,0 +1,13 @@
+
+#footer {
+	padding: 20px;
+	position: absolute;
+	bottom: 0px;
+	left: 0px;
+}
+	
+	#footer div {
+		color: #444;
+		padding: 2px;
+		font-size: 12px;
+	}

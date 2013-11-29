@@ -1,0 +1,51 @@
+
+/*
+  The center-panel styles affect the welcome and login screens
+*/
+
+.center-panel {
+	width: 98%;
+	max-width: 650px;
+	margin: 50px auto;
+	text-shadow: 1px 1px 0 #fff;
+}
+
+	@media only screen and (max-width: 40.063em) {
+		.center-panel {
+			margin: 0 auto;
+		}
+	}
+	
+	.center-panel .panel {
+		border-radius: 15px;
+		box-shadow: 3px 3px 3px rgba(0,0,0,0.4);
+	}
+
+		.center-panel .panel > div {
+			padding: 10px 25px;
+		}
+
+			.center-panel label .validation {
+				color: #b30;
+				font-size: smaller;
+				margin-left: 20px;
+			}
+
+			.center-panel input {
+				margin-top: 7px;
+			}
+
+			.center-panel p.small {
+				font-size: smaller;
+			}
+
+			.center-panel button.submit {
+				margin-top: 10px;
+			}
+
+			.center-panel .loading {
+				display: inline-block;
+				margin-left: 20px;
+				position: relative;
+				top: -5px;
+			}

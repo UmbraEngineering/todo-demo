@@ -670,19 +670,6 @@ Collection.$ = function(rules) {
 };
 
 // 
-// Create a shortcut for unique definitions
-// 
-Collection.$unique = Collection.$({ unique: true });
-
-// 
-// Make sure all collection definitions get the $ method
-// 
-Collection.onExtend(function() {
-	this.$ = Collection.$;
-	this.$unique = this.$({ unique: true });
-});
-
-// 
 // This function creates collection definitions
 // 
 var createDefinition = exports.createDefinition = function(collection, rules) {
@@ -705,6 +692,20 @@ var createDefinition = exports.createDefinition = function(collection, rules) {
 	};
 
 	return def;
+};
+
+// 
+// Create a shortcut for unique definitions
+// 
+Collection.$unique = Collection.$({ unique: true });
+
+// 
+// Make sure all collection definitions get the $ method
+// 
+Collection.onExtend = function() {
+	this.$ = Collection.$;
+	this.$unique = this.$({ unique: true });
+	this.onExtend = Collection.onExtend;
 };
 
 // --------------------------------------------------------

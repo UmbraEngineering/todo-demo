@@ -8,9 +8,9 @@
   },
   "repository": "",
   "author": "",
-  "license": "MIT",
+  "license": "none",
   "dependencies": {
-    "common.js": "~1.0.6",
+    "common.js": "~1.1.0",
     "grunt": "~0.4.1",
     "grunt-contrib-concat": "~0.3.0",
     "grunt-contrib-cssmin": "~0.7.0",

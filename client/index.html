@@ -1,15 +1,25 @@
-<!DOCTYPE html>
+<!doctype html>
 <html>
 <head>
 	
-	<title>cloak.js</title>
+	<title>Todo Demo App</title>
 
-	<link rel="stylesheet" type="text/css" href="stylesheets/styles.css" />
+	<link rel="stylesheet" type="text/css" href="build/css/styles.css" />
 
 </head>
 <body>
 
-	<div id="wrapper"></div>
+	<div id="wrapper">
+		<div id="heading" class="panel">
+			<h1>Todo Demo App <small>(cloak.js/dagger.js)</small></h1>
+		</div>
+
+		<div id="content">
+			<!-- Main content gets drawn here -->
+		</div>
+
+		<div id="footer"></div>
+	</div>
 
 	<!-- CommonJS Library -->
 	<script src="build/js/common.js"></script>
@@ -25,6 +35,9 @@
 
 		// Add the /lib directory to the require path
 		require.paths.push('/lib');
+
+		// Polyfill JSON if needed
+		JSON || require('json2');
 
 		// Load underscore
 		var _ = require('underscore');
